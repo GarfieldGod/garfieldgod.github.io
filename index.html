@@ -35,6 +35,16 @@
             float: left;
             border-radius: 15px;
             margin-top: 20px;
+            transition: 0.5s;
+        }
+        .headavatar:hover{
+            height: 300px;
+            width: 300px;
+            border: 2px solid pink;
+            float: left;
+            border-radius: 15px;
+            margin-top: 20px;
+            transition: 0.5s;
         }
         .headavatar img{
             width: 100%;
@@ -81,6 +91,7 @@
             margin-top: 15px;
             border-radius: 10px;
             overflow: hidden;
+            text-align:center;
         }
         .selector{
             height: 150px;
@@ -103,6 +114,8 @@
             border-radius: 10px;
         }
         .selector a:hover{
+            line-height: 140px;
+            font-size: 32px;
             --_d: 100%;
         }
         .otherpages{
@@ -159,17 +172,34 @@
             font-weight: 1000;
             text-align:center;
         }
+        .rollingwords{
+            width: 1060px;
+            height: 50px;
+            line-height: 50px;
+            margin: auto;
+            margin-top: 15px;
+            background: #fdf8e3;
+            border-radius: 15px ;
+            border: 1px solid #ffe7b8;
+        }
+        .rollingwordsA{
+            width: 1000px;
+            height: 50px;
+            line-height: 50px;
+            margin: auto;
+            color: #b05a2e;
+        }
     </STYle>
 </head>
 <body>
     <div class="background">
         <div class="head">
             <div class="headtitle">
-                <div class="headavatar"><img src="Images/IndexImages/XX.jpg" alt=""></div>
+                <a href="https://garfieldgod.cn"><div class="headavatar"><img src="Images/IndexImages/XX.jpg" alt=""></div></a>
                 <div class="headname">
                     GarfieldGod
                     <div class="headsignature">I'm God.</div>
-                    <div class="headsignatureB">个人主页：GarfieldGod.cn</div>
+                    <div class="headsignatureB">个人主页：<a href="https://garfieldgod.cn" style="text-decoration: none;color: white;">GarfieldGod.cn</a></div>
                 </div>
             </div>
             <div class="selector">
@@ -181,8 +211,9 @@
                 
             </div>
         </div>
+        <div class="rollingwords"><div class="rollingwordsA"><marquee behavior="" direction="">您好，欢迎访问GarfieldGod的主页，该页面正在建设中，暂无更多内容，作者正在学习前端设计与后端，敬请期待！</marquee></div></div>
         <div class="maincontent">
-            您好，欢迎访问GarfieldGod的主页，该页面正在建设中，暂无更多内容，作者正在学习前端设计与后端，敬请期待！
+            暂无内容
         </div>
         <div class="backtotopandmain">
              
