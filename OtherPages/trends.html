@@ -35,6 +35,16 @@
             float: left;
             border-radius: 15px;
             margin-top: 20px;
+            transition: 0.5s;
+        }
+        .headavatar:hover{
+            height: 250px;
+            width: 250px;
+            border: 2px solid pink;
+            float: left;
+            border-radius: 15px;
+            margin-top: 20px;
+            transition: 0.5s;
         }
         .headavatar img{
             width: 100%;
@@ -81,12 +91,13 @@
             margin-top: 15px;
             border-radius: 10px;
             overflow: hidden;
+            text-align:center;
         }
         .selector{
             height: 150px;
             width: 700px;
             /*background: red;*/
-            line-height: 150px;
+            line-height: 140px;
             font-size: 20px;
             float: right;
         }
@@ -103,6 +114,8 @@
             border-radius: 10px;
         }
         .selector a:hover{
+            line-height: 140px;
+            font-size: 32px;
             --_d: 100%;
         }
         .otherpages{
@@ -165,13 +178,13 @@
     <div class="background">
         <div class="head">
             <div class="headtitle">
-                <div class="headavatar"><img src="../Images/IndexImages/XX.jpg" alt=""></div>
+                <a href="../index.html"><div class="headavatar"><img src="../Images/IndexImages/XX.jpg" alt=""></div></a>
                 <div class="headname">
                     最近动态
                 </div>
             </div>
             <div class="selector">
-                <a href="trends.html" style="background: skyblue;">动态</a>丨
+                <a href="trends.html" style="background: #556774;font-size: 32px;">动态</a>丨
                 <a href="information.html" >个人信息</a>丨
                 <a href="log.html" >日志</a>丨
                 <a href="artstation.html">作品</a>丨
