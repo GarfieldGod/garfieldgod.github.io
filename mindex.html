@@ -200,9 +200,11 @@
             margin-left: 5px;
             margin-right: 5px;
             float: left;
-            animation: songroll 10s infinite linear;
             overflow: hidden;
             transition: 0.1s;
+        }
+        .musicname img{
+            animation: songroll 10s infinite linear;
         }
         .musicplayerbesmall{
             width: 10px;
@@ -220,10 +222,29 @@
     </STYle>
 </head>
 <body>
-    <audio src="MusicPlayer/songs/Lullaby.mp3" controls autoplay loop></audio>
+    <audio src="MusicPlayer/songs/Lullaby.mp3" autoplay loop preload id="mymusicplayer"></audio>
+    <script>
+        var audio = document.getElementById('mymusicplayer');
+        audio.autoplay = true;
+        /*document.getElementById('mymusicname').onclick = function(){
+            alert(你好！);
+            audio.play();  
+        }; */
+        function PlayMusic(){
+            if(document.getElementById('mymusicname').style.animationPlayState != 'paused'){
+                audio.pause(); 
+                document.getElementById('mymusicname').style.animationPlayState = 'paused';
+            }
+            else
+            {
+                audio.play(); 
+                document.getElementById('mymusicname').style.animationPlayState = '';
+            }
+        }
+    </script>
     <div class="musicplayer">
-        
-        <div class="musicplayerbesmall"><img src="MusicPlayer/images/收纳.png" alt=""  style="width: 100%;height: 100%;"></div><div class="musicname"><img src="MusicPlayer/songimages/Lullaby.jpeg" alt="" style="width: 100%;height: 100%;"></div>   
+        <div class="musicplayerbesmall" style="cursor:pointer;"><img src="MusicPlayer/images/收纳.png" alt=""  style="width: 100%;height: 100%;"></div>
+        <div class="musicname" style="cursor:pointer;" onclick="PlayMusic()"><img src="MusicPlayer/songimages/Lullaby.jpeg" alt="" style="width: 100%;height: 100%;" id="mymusicname"></div>   
     </div>
     <div class="background">
 
