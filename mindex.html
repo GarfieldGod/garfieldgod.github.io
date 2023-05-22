@@ -13,7 +13,7 @@
             overflow: hidden;
         }
         .head{
-            height: 250px;
+            height: 200px;
             background: #24292c;
             font-size: 40px;
             color: #ffffff;
@@ -26,8 +26,8 @@
             /*background: blue;*/
         }
         .headavatar{
-            width: 150px;
-            height: 150px;
+            width: 100px;
+            height: 100px;
             border: 1px solid white;
             float: left;
             border-radius: 17px;
@@ -44,10 +44,10 @@
             width: 50%;
             height: 40px;
             color: #ffffff;
-            font-size: 30px;
+            font-size: 24px;
             line-height: 40px;
             margin-left: 25px;
-            margin-top: 60px;
+            margin-top: 25px;
             font-weight: 700;
             float: left;
             /*background: pink;*/
@@ -57,8 +57,8 @@
             width: 350px;
             font-size: 16px;
             line-height: 16px;
-            margin-left: 20px;
-            margin-top: 16px;
+            margin-left: 10px;
+            margin-top: 10px;
             font-weight: 200;
             /*background: red;*/
         }
@@ -67,8 +67,8 @@
             width: 350px;
             font-size: 8px;
             line-height: 8px;
-            margin-top: 12px;
-            margin-left: 20px;
+            margin-top: 10px;
+            margin-left: 10px;
             font-weight: 100;
             /*background: red;*/
         }
@@ -87,9 +87,9 @@
             width: 100%;
             /*background: red;*/
             line-height: 50px;
-            font-size: 20px;
+            font-size: 16px;
             margin: auto;
-            margin-top: 35px;
+            margin-top: 0px;
             text-align:center;
         }
         .selector a{
@@ -180,7 +180,7 @@
             color: #b05a2e;
         }
         .musicplayer{
-            width: 150px;
+            width: 65px;
             height: 50px;
             background: #ffffff;
             position: fixed;
@@ -197,30 +197,12 @@
             border-radius: 50%;
             border: 1px solid #24292c;
             margin-top: 5px;
-            margin-left: 10px;
-            margin-right: 10px;
+            margin-left: 5px;
+            margin-right: 5px;
             float: left;
             animation: songroll 10s infinite linear;
             overflow: hidden;
             transition: 0.1s;
-        }
-        .musicplayerlastsong{
-            width: 25px;
-            height: 30px;
-            margin-top: 10px;
-            float: left;
-        }
-        .musicplayerstop{
-            width: 25px;
-            height: 30px;
-            margin-top: 10px;
-            float: left;
-        }
-        .musicplayernextsong{
-            width: 25px;
-            height: 30px;
-            margin-top: 10px;
-            float: left;
         }
         .musicplayerbesmall{
             width: 10px;
@@ -238,13 +220,10 @@
     </STYle>
 </head>
 <body>
+    <audio src="MusicPlayer/songs/Lullaby.mp3" controls autoplay loop></audio>
     <div class="musicplayer">
-        <div class="musicplayerbesmall"><img src="MusicPlayer/images/收纳.png" alt=""  style="width: 100%;height: 100%;"></div>
-        <div class="musicname"><img src="MusicPlayer/songimages/Lullaby.jpeg" alt="" style="width: 100%;height: 100%;"></div>
-        <div class="musicplayerlastsong"><img src="MusicPlayer/images/上一首.png" alt=""  style="width: 100%;height: 100%;"></div>
-        <div class="musicplayerstop"><img src="MusicPlayer/images/暂停播放.png" alt=""  style="width: 100%;height: 100%;"></div>
-        <div class="musicplayernextsong"><img src="MusicPlayer/images/下一首.png" alt="" style="width: 100%;height: 100%;"></div>
         
+        <div class="musicplayerbesmall"><img src="MusicPlayer/images/收纳.png" alt=""  style="width: 100%;height: 100%;"></div><div class="musicname"><img src="MusicPlayer/songimages/Lullaby.jpeg" alt="" style="width: 100%;height: 100%;"></div>   
     </div>
     <div class="background">
 
