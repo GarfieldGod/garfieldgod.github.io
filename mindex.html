@@ -241,9 +241,19 @@
                 document.getElementById('mymusicname').style.animationPlayState = '';
             }
         }
+        function MusicBeSmall(){
+            if (document.getElementById('mymusic').style.width == 10+"px")
+            {
+                document.getElementById('mymusic').style.width = 65+"px";
+            }
+            else
+            {
+                document.getElementById('mymusic').style.width = 10+"px"; 
+            }
+        }
     </script>
-    <div class="musicplayer">
-        <div class="musicplayerbesmall" style="cursor:pointer;"><img src="MusicPlayer/images/收纳.png" alt=""  style="width: 100%;height: 100%;"></div>
+    <div class="musicplayer" id="mymusic">
+        <div class="musicplayerbesmall" style="cursor:pointer;" onclick="MusicBeSmall()"><img src="MusicPlayer/images/收纳.png" alt=""  style="width: 100%;height: 100%;"></div>
         <div class="musicname" style="cursor:pointer;" onclick="PlayMusic()"><img src="MusicPlayer/songimages/Lullaby.jpeg" alt="" style="width: 100%;height: 100%;" id="mymusicname"></div>   
     </div>
     <div class="background">
