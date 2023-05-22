@@ -13,7 +13,7 @@
             overflow: hidden;
         }
         .head{
-            height: 300px;
+            height: 250px;
             background: #24292c;
             font-size: 40px;
             color: #ffffff;
@@ -21,30 +21,30 @@
         }
         .headtitle{
             height: 150px;
-            width: 700px;
+            width: 100%;
             margin: auto;
             /*background: blue;*/
         }
         .headavatar{
-            height: 200px;
-            width: 200px;
+            width: 150px;
+            height: 150px;
             border: 1px solid white;
             float: left;
-            border-radius: 15px;
+            border-radius: 17px;
             margin-top: 20px;
-            margin-left: 50px;
+            margin-left: 20px;
             transition: 0.5s;
         }
         .headavatar img{
             width: 100%;
             height: 100%;
-            border-radius: 14px;
+            border-radius: 15px;
         }
         .headname{
+            width: 50%;
             height: 40px;
-            width: 350px;
             color: #ffffff;
-            font-size: 40px;
+            font-size: 30px;
             line-height: 40px;
             margin-left: 25px;
             margin-top: 60px;
@@ -74,7 +74,7 @@
         }
         .maincontent{
             height: 500px;
-            width: 500px;
+            width: 95%;
             background: #ffffff;
             margin:auto;
             margin-top: 15px;
@@ -84,17 +84,19 @@
         }
         .selector{
             height: 50px;
-            width: 500px;
+            width: 100%;
             /*background: red;*/
             line-height: 50px;
             font-size: 20px;
             margin: auto;
-            margin-top: 75px;
+            margin-top: 35px;
+            text-align:center;
         }
         .selector a{
+            
             text-decoration: none;
-            margin-left: 15px;
-            margin-right: 15px;
+            margin-left: 5px;
+            margin-right: 5px;
             color: white;
             background: 
             linear-gradient(#556774 0 0) 
@@ -161,7 +163,7 @@
             text-align:center;
         }
         .rollingwords{
-            width: 600px;
+            width: 100%;
             height: 50px;
             line-height: 50px;
             margin: auto;
@@ -171,30 +173,30 @@
             border: 1px solid #ffe7b8;
         }
         .rollingwordsA{
-            width: 540px;
+            width: 90%;
             height: 50px;
             line-height: 50px;
             margin: auto;
             color: #b05a2e;
         }
         .musicplayer{
-            width: 210px;
-            height: 65px;
+            width: 150px;
+            height: 50px;
             background: #ffffff;
             position: fixed;
             right: 0%;
-            top: 15%;
+            top: 25%;
             border: 1px solid #c5c5c7;
             border-radius: 5px;
             overflow: hidden;
-            
+            z-index: 10;
         }
         .musicname{
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             border: 1px solid #24292c;
-            margin-top: 7.5px;
+            margin-top: 5px;
             margin-left: 10px;
             margin-right: 10px;
             float: left;
@@ -202,35 +204,27 @@
             overflow: hidden;
             transition: 0.1s;
         }
-        .musicname:hover{
-            width: 60px;
-            height: 60px;
-            margin-top: 2px;
-            margin-left: 5px;
-            margin-right: 5px;
-            animation-play-state: paused;
-        }
         .musicplayerlastsong{
-            width: 40px;
-            height: 40px;
-            margin-top: 12.5px;
+            width: 25px;
+            height: 30px;
+            margin-top: 10px;
             float: left;
         }
         .musicplayerstop{
-            width: 40px;
-            height: 40px;
-            margin-top: 12.5px;
+            width: 25px;
+            height: 30px;
+            margin-top: 10px;
             float: left;
         }
         .musicplayernextsong{
-            width: 40px;
-            height: 40px;
-            margin-top: 12.5px;
+            width: 25px;
+            height: 30px;
+            margin-top: 10px;
             float: left;
         }
         .musicplayerbesmall{
             width: 10px;
-            height: 65px;
+            height: 50px;
             float: left;
         }
         @keyframes songroll{
@@ -244,14 +238,14 @@
     </STYle>
 </head>
 <body>
- <!--    <div class="musicplayer">
+    <div class="musicplayer">
         <div class="musicplayerbesmall"><img src="MusicPlayer/images/收纳.png" alt=""  style="width: 100%;height: 100%;"></div>
         <div class="musicname"><img src="MusicPlayer/songimages/Lullaby.jpeg" alt="" style="width: 100%;height: 100%;"></div>
         <div class="musicplayerlastsong"><img src="MusicPlayer/images/上一首.png" alt=""  style="width: 100%;height: 100%;"></div>
         <div class="musicplayerstop"><img src="MusicPlayer/images/暂停播放.png" alt=""  style="width: 100%;height: 100%;"></div>
         <div class="musicplayernextsong"><img src="MusicPlayer/images/下一首.png" alt="" style="width: 100%;height: 100%;"></div>
         
-    </div> -->
+    </div>
     <div class="background">
 
         <div class="head">
