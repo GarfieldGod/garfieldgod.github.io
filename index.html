@@ -19,7 +19,7 @@
     <STYle>
         *{ margin:0;padding:0;  }
         .background{
-            height: 2500px;
+            height: 1000px;
             background: #c5c5c7;
             overflow: hidden;
         }
@@ -33,7 +33,7 @@
         }
         .headtitle{
             height: 150px;
-            width: 700px;
+            width: 50%;
             /*margin: auto;*/
             margin-left: 40px;
             /*background: blue;*/
@@ -47,6 +47,7 @@
             border-radius: 15px;
             margin-top: 20px;
             transition: 0.5s;
+            z-index: 10;
         }
         .headavatar:hover{
             height: 300px;
@@ -64,8 +65,9 @@
         }
         .headname{
             height: 40px;
-            width: 350px;
+            width: 250px;
             color: #ffffff;
+            /*color: red;*/
             font-size: 40px;
             line-height: 40px;
             margin-left: 25px;
@@ -95,7 +97,7 @@
             /*background: red;*/
         }
         .maincontent{
-            height: 1800px;
+            height: 500px;
             width: 1200px;
             background: #ffffff;
             margin:auto;
@@ -106,11 +108,13 @@
         }
         .selector{
             height: 150px;
-            width: 700px;
+            width: 45%;
             /*background: red;*/
             line-height: 150px;
             font-size: 20px;
-            float: right;
+            float: left;
+            overflow: hidden;
+            text-align:center;
         }
         .selector a{
             text-decoration: none;
@@ -199,61 +203,38 @@
             line-height: 50px;
             margin: auto;
             color: #b05a2e;
+            z-index: 1;
         }
         .musicplayer{
-            width: 210px;
-            height: 65px;
+            width: 100px;
+            height: 75px;
             background: #ffffff;
             position: fixed;
             right: 0%;
-            top: 15%;
+            top: 25%;
             border: 1px solid #c5c5c7;
-            border-radius: 5px;
+            border-radius: 15px;
             overflow: hidden;
-            
+            z-index: 10;
         }
         .musicname{
-            width: 50px;
-            height: 50px;
+            width: 60x;
+            height: 60px;
             border-radius: 50%;
             border: 1px solid #24292c;
             margin-top: 7.5px;
             margin-left: 10px;
             margin-right: 10px;
             float: left;
-            animation: songroll 10s infinite linear;
             overflow: hidden;
             transition: 0.1s;
         }
-        .musicname:hover{
-            width: 60px;
-            height: 60px;
-            margin-top: 2px;
-            margin-left: 5px;
-            margin-right: 5px;
-            animation-play-state: paused;
-        }
-        .musicplayerlastsong{
-            width: 40px;
-            height: 40px;
-            margin-top: 12.5px;
-            float: left;
-        }
-        .musicplayerstop{
-            width: 40px;
-            height: 40px;
-            margin-top: 12.5px;
-            float: left;
-        }
-        .musicplayernextsong{
-            width: 40px;
-            height: 40px;
-            margin-top: 12.5px;
-            float: left;
+        .musicnameimgs{
+            animation: songroll 10s infinite linear;
         }
         .musicplayerbesmall{
             width: 10px;
-            height: 65px;
+            height: 75px;
             float: left;
         }
         @keyframes songroll{
@@ -267,13 +248,40 @@
     </STYle>
 </head>
 <body>
-    <div class="musicplayer">
-        <div class="musicplayerbesmall"><img src="MusicPlayer/images/收纳.png" alt=""  style="width: 100%;height: 100%;"></div>
-        <div class="musicname"><img src="MusicPlayer/songimages/Lullaby.jpeg" alt="" style="width: 100%;height: 100%;"></div>
-        <div class="musicplayerlastsong"><img src="MusicPlayer/images/上一首.png" alt=""  style="width: 100%;height: 100%;"></div>
-        <div class="musicplayerstop"><img src="MusicPlayer/images/暂停播放.png" alt=""  style="width: 100%;height: 100%;"></div>
-        <div class="musicplayernextsong"><img src="MusicPlayer/images/下一首.png" alt="" style="width: 100%;height: 100%;"></div>
-        
+    <audio src="MusicPlayer/songs/Lullaby.mp3" loop preload:-auto id="mymusicplayer"></audio>
+    <script>
+        var audio = document.getElementById('mymusicplayer');
+        //audio.addEventListener('canplaythrough', function() {console.log('音频有效'); });
+        function animeon(){
+            document.getElementById('mymusicname').className = "musicnameimgs";
+            if(document.getElementById('mymusicname').className != "musicnameimgs")
+            {document.getElementById('mymusicname').style.animationPlayState = 'paused';}
+        }
+        function PlayMusic(){
+            if(document.getElementById('mymusicname').style.animationPlayState != 'paused'){
+                audio.pause(); 
+                document.getElementById('mymusicname').style.animationPlayState = 'paused';
+            }
+            else
+            {
+                audio.play(); 
+                document.getElementById('mymusicname').style.animationPlayState = '';
+            }
+        }
+        function MusicBeSmall(){
+            if (document.getElementById('mymusic').style.width == 10+"px")
+            {
+                document.getElementById('mymusic').style.width = 100+"px";
+            }
+            else
+            {
+                document.getElementById('mymusic').style.width = 10+"px"; 
+            }
+        }
+    </script>
+    <div class="musicplayer" id="mymusic">
+        <div class="musicplayerbesmall" style="cursor:pointer;" onclick="MusicBeSmall()"><img src="MusicPlayer/images/收纳.png" alt=""  style="width: 100%;height: 100%;"></div>
+        <div class="musicname" style="cursor:pointer;" onmousedown="PlayMusic()"><img src="MusicPlayer/songimages/Lullaby.jpeg" alt="" style="width: 100%;height: 100%;" id="mymusicname" onmouseup="animeon()"></div>   
     </div>
     <div class="background">
         <div class="head">
@@ -286,17 +294,16 @@
                 </div>
             </div>
             <div class="selector">
-                <a href="OtherPages/trends.html">动态</a>丨
-                <a href="OtherPages/information.html" >个人信息</a>丨
-                <a href="OtherPages/log.html" >日志</a>丨
-                <a href="OtherPages/artstation.html">作品</a>丨
+                <a href="https://garfieldgod.cn">动态</a>丨
+                <a href="https://garfieldgod.cn" >个人信息</a>丨
+                <a href="https://garfieldgod.cn" >日志</a>丨
+                <a href="https://garfieldgod.cn">作品</a>丨
                 <a href="https://garfieldgod.cn">更多</a>
-                
             </div>
         </div>
-        <div class="rollingwords"><div class="rollingwordsA"><marquee behavior="" direction="">您好，欢迎访问GarfieldGod的主页，该页面正在建设中，暂无更多内容，作者正在学习前端设计与后端，敬请期待！</marquee></div></div>
+        <div class="rollingwords"><div class="rollingwordsA"><marquee behavior="" direction="">您好，欢迎访问GarfieldGod的主页，本页面已暂停使用，最新主页请访问garfieldgod.cn!</marquee></div></div>
         <div class="maincontent">
-            暂无内容
+            该页面已暂停访问！点击头像跳转！
         </div>
         <div class="backtotopandmain">
              
