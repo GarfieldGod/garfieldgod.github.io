@@ -87,6 +87,7 @@
     float: left;
     transition: 0.5s;
     cursor:pointer;
+    background: white;
 }
 .avatar:hover{
     width:calc(var(--AvatarSize) + 50px);
