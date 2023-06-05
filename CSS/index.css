@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0; 
 }
+body {background-color: #000000;}
 :root{ 
     --coverheight:430px;
     --MiniHeaderheight:220px;
@@ -13,18 +14,35 @@
 }
 /*页眉------------------------------------------------------------------------------------------------------------*/
 .entercover{
-    height:calc(var(--coverheight) + 350px);
+    height:calc(var(--coverheight) + 200px);
     cursor:pointer;
+    overflow: hidden;
+    transition: 0.5s;
+    background: black;
+}
+.entercover:hover{
+    height:calc(var(--coverheight) + 300px);
+}
+.entercover img{
+    filter: brightness(50%);
+    transition: 0.5s;
+    width: 100%;
+    margin-top: -10%;
+}
+.entercover:hover img{
+    filter: brightness(100%);
 }
 .cover{
     height: var(--coverheight);
     overflow: hidden;
     transition: 0.5s;
     background: black;
+    min-width: auto;
 }
 .cover img{
     filter: brightness(50%);
     transition: 0.5s;
+    margin-top: -10%;
 }
 .closecover{
     font-size: 36px;
@@ -41,10 +59,6 @@
     height:calc(var(--coverheight) + 200px);
     cursor:pointer;
 }
-/* .cover:hover .closecover{
-    display: block;
-    animation:coverenter 5s infinite ;
-} */
 .entercover:hover .closecover{
     display: block;
     animation:coverenter 5s infinite ;
@@ -54,15 +68,27 @@
     filter: brightness(100%);
 }
 .MiniHeader{
-    width: 100%;
     height: var(--MiniHeaderheight);
     background: black;
     position: relative;
     /*overflow: hidden;*/
 }
-.MiniHeader .navigationBlockA{
+.navigationBlock{
+    width: 70%;
+    min-width: 1200px;
+    position: absolute;
+    left:0px;
+    right: 0px;
+    top:0px;
+    bottom: 0px;
+    margin: auto;
+    overflow: hidden;
+    /*background: #9c9c9c;*/
+}
+.navigationBlockA{
     height: calc(var(--AvatarSize) + 4px);
     width: 70%;
+    min-width: 1200px;
     position: absolute;
     left:0px;
     right: 0px;
@@ -75,13 +101,16 @@
     height: calc(var(--AvatarSize) + 4px);
     width: 50%;
     float: left;
+    margin-left: 20%;
+    /*background: skyblue;*/
+    min-width: 550px;
+    transition: 1s;
 }
 .avatar{
-    width: var(--AvatarSize);
+    width: var(--AvatarSize) ;
     height: var(--AvatarSize);
     border-radius: 50%;
     border: 2px solid white;
-    margin-top: calc();
     margin-left: 100px;
     overflow: hidden;
     float: left;
@@ -101,13 +130,18 @@
     padding-left: 35px;
     overflow: hidden;
     float: left;
+    white-space:nowrap;
+    /*background: red;*/
 }
 .TheNavigation{
     width: 50%;
+    min-width: 500px;
     height: calc(var(--AvatarSize) + 4px);
     float: right;
     /*background: red;*/
+    margin-right: -300%;
     position: relative;
+    transition: 1s;
 }
 .TheNavigation .mainmenu>li{
     float: right;
@@ -233,6 +267,8 @@
     /*background: skyblue;*/
     margin: auto;
     overflow: auto;
+    min-width: 500px;
+    /*background: red;*/
 }
 .morelink p{
     line-height: var(--morelinksHeight);
