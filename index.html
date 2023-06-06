@@ -5,25 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GarfieldGod-神加菲尔德</title>
+    <script type="text/javascript">
+        try{
+            if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) 
+            {
+                window.location.href="mindex.php";   
+            }
+            else{
+                /*window.location.href="cindex.html";*/
+            }
+            }catch(e){}
+    </script>
     <link type="text/css" rel="stylesheet" href="CSS/index.css">
     <script type="text/javascript" src="JavaScript/index.js"></script>
+    <link rel="icon" href="Resource/ico.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="Resource/ico.ico" type="image/x-icon">
 </head>
 <body>
     <!-- 页眉------------------------------------------------------------------------------------------------ -->
     <!-- 头像浏览器------------------------------------------------------------------------------------------------ -->
     <div class="avatarviewer" id="avatarviewer">
+        <p style="color: white;text-align: center;font-family:Times New Roman;;font-size: 44px;font-weight: 700;margin-top: 20px;">The cutest person in the world</p>
         <div class="ESCavatarviewer" style="cursor:pointer;" onclick="ESCviewavatar()">
-            <img style="width: 100%;height: 100%;" src="Resource/ESC.png" alt="">
+            返回<!-- <img style="width: 100%;height: 100%;" src="Resource/ESC.png" alt=""> -->
         </div>
-            <img style="width: 100%; height: 100%;margin:auto;" src="Resource/AvatarPro.jpg" alt="">
+        <div class="avatarviewerimg" id="avatarviewerimg"><img style="width: 100%; height: 100%;margin:auto;" src="Resource/AvatarPro.jpg" alt=""></div>
     </div>
     <!-- 大型页眉------------------------------------------------------------------------------------------------ -->
     <div class="entercover" id="cover" onclick="CoverBe()"><img src="Resource/IndexCover.jpg" alt=""><div class="closecover">欢迎访问GarfieldGod的主页</div></div>
-    <div class="MiniHeader">
+    <div class="MiniHeader" id="MiniHeader">
         <div class="navigationBlock">
             <div class="navigationBlockA" id="navigationBlockA">
                 <div class="navigationBlockB" id="navigationBlockB">
-                <div class="avatar" id="avatar" onclick="viewavatar()">
+                <div class="avatarpre" id="avatar" onclick="viewavatar()">
                     <img style="width: 100%; height: 100%;margin:auto;" src="Resource/Avatar.jpg" alt="">
                 </div>
                 <div class="BriefIntroduction">
