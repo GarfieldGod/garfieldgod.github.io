@@ -4,138 +4,127 @@
 }
 body {background-color: #000000;}
 :root{ 
-    --coverheight:430px;
+    --coverheight:200px;
     --MiniHeaderheight:220px;
     --AvatarSize:150px;
     --ContentHeight:1000px;
     --ContentAHeight:725px;
-    --morelinksHeight:300px;
+    --morelinksHeight:200px;
     --coverentercolor:white;
+}
+.screen {
+    width: 600px;
+    height: 800px;
+    overflow: auto;
+    /*position: relative;*/
 }
 /*页眉------------------------------------------------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------------------------------------------------*/
 .entercover{
-    height:calc(var(--coverheight) + 200px);
+    height:72.5%;
     cursor:pointer;
     overflow: hidden;
-    transition: 0.3s;
+    transition: 0.5s;
     background: black;
-}
-.entercover:hover{
-    height:calc(var(--coverheight) + 330px);
+    position: relative;
 }
 .entercover img{
-    filter: brightness(50%);
+    filter: brightness(80%);
     transition: 0.5s;
-    width: 100%;
-    margin-top: -10%;
+    /*height: 100%;*/
+    position: absolute;
+    left: 10%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+    animation:coverbright 5s infinite ;
 }
-.entercover:hover img{
-    filter: brightness(100%);
+.closecover{
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 宋体;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    color: var(--colorC);
+    transition: 2s;
+    text-shadow: 2px 0px 10px ;
+    --colorC:rgba(163, 191, 194, 0.8);
+    animation:coverenter 6s infinite ;
 }
 .cover{
     height: var(--coverheight);
+    cursor:pointer;
     overflow: hidden;
-    transition: 0.3s;
+    transition: 0.5s;
     background: black;
-    min-width: auto;
+    position: relative;
 }
 .cover img{
     filter: brightness(50%);
     transition: 0.5s;
-    margin-top: -10%;
-}
-.closecover{
-    font-size: 36px;
-    font-weight: 700;
-    font-family: 宋体;
     position: absolute;
-    left: 35%;
-    top: 40%;
-    color: var(--colorC);
-    transition: 2s;
-    text-shadow: 2px 0px 10px ;
+    left: 10%;
+    top: 150%;
+    transform: translate(-50%, -50%);
 }
-.cover:hover{
+/* .cover:hover{
     height:calc(var(--coverheight) + 200px);
     cursor:pointer;
-}
-.entercover:hover .closecover{
-    --colorC:rgba(163, 191, 194, 0.8);;
-    animation:coverenter 6s infinite ;
-}
+} 
 .cover:hover img{
-    margin-top: -5%;
+    top: 100%;
     filter: brightness(100%);
 }
+*/
 .MiniHeader{
     height: var(--MiniHeaderheight);
     background: black;
     position: relative;
     transition: 0.5s;
-    /*overflow: hidden;*/
-}
-.navigationBlock{
-    width: 70%;
-    min-width: 1200px;
-    position: absolute;
-    left:0px;
-    right: 0px;
-    top:0px;
-    bottom: 0px;
-    margin: auto;
     overflow: hidden;
-    /*background: #9c9c9c;*/
 }
 .navigationBlockA{
     height: calc(var(--AvatarSize) + 4px);
-    width: 70%;
-    min-width: 1200px;
-    position: absolute;
-    left:0px;
-    right: 0px;
-    top:0px;
-    bottom: 0px;
-    margin: auto;
-    /*background: blue;*/
+    width: 100%;
+    overflow: hidden;
+    margin-top: 33px;
 }
 .navigationBlockB{
     height: calc(var(--AvatarSize) + 4px);
-    width: 50%;
-    float: left;
-    margin-left: 20%;
     /*background: skyblue;*/
     min-width: 550px;
     transition: 1s;
+    position: relative;
 }
 .avatar{
     width: var(--AvatarSize) ;
     height: var(--AvatarSize);
     border-radius: 50%;
     border: 2px solid white;
-    margin-left: 100px;
     overflow: hidden;
     float: left;
-    transition: 0.25s;
+    transition: 1s;
     cursor:pointer;
     background: white;
-}
-.avatar:hover{
-    width:calc(var(--AvatarSize) + 50px);
-    height:calc(var(--AvatarSize) + 50px);
-    margin-top: -25px;
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 .avatarpre{
     width: var(--AvatarSize) ;
     height: var(--AvatarSize);
     border-radius: 50%;
     border: 2px solid white;
-    margin-left: 100px;
     overflow: hidden;
     float: left;
-    transition: 0.5s;
+    transition: 1s;
     background: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 .BriefIntroduction{
     width: 250px;
@@ -145,24 +134,40 @@ body {background-color: #000000;}
     overflow: hidden;
     float: left;
     white-space:nowrap;
+    position: absolute;
+    left: 60%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: 1s;
     /*background: red;*/
 }
+.BriefIntroductionpre{
+    width: 250px;
+    height: 119px;
+    padding-top: 25px;
+    padding-left: 35px;
+    overflow: hidden;
+    float: left;
+    position: absolute;
+    left: 200%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: 1s;
+}
 .TheNavigation{
-    width: 50%;
-    min-width: 500px;
-    height: calc(var(--AvatarSize) + 4px);
-    float: right;
+    width: 100%;
+    height: calc(var(--AvatarSize) - 100px);
     /*background: red;*/
-    margin-right: -300%;
     position: relative;
     transition: 1s;
+    display: none;
 }
 .TheNavigation .mainmenu>li{
     float: right;
     font-size: 24px;
     color: white;
     text-decoration: none;
-    margin-top: calc(calc(calc(var(--AvatarSize) + 4px) - 36px) / 2);
+    /*margin-top: calc(calc(calc(var(--AvatarSize) + 4px) - 36px) / 2);*/
     margin-left: 15px;
     transition: 0.1s;
 }
@@ -201,13 +206,14 @@ body {background-color: #000000;}
 #contentbackground{
     /*height: var(--ContentHeight);*/
     background: #f6f6f6;
-    padding-bottom: 200px;
+    padding-bottom: 50px;
     transition: 0.5s;
     padding-top: 15px;
+    padding-bottom: 35px;
     display: none;
 }
 #contentbackground .contentTittle{
-    line-height: px;
+    line-height: 36px;
     width: 60%;
     margin: auto;
 }
@@ -218,17 +224,18 @@ body {background-color: #000000;}
     line-height: 112px;
 }
 #contentbackground .contentsA{
-    height: var(--ContentAHeight)/*calc(var(--ContentHeight) * 0.8)*/;
-    width:60%;
+    /*height: var(--ContentAHeight);*/
+    width:90%;
     background:#fff;
     margin: auto;
     border-radius: 50px;
-    padding-top:72.5px;
+    padding-top:35px;
+    padding-bottom:35px;
     /*background: blue;*/
 }
 #contentbackground .contentsA .ContentsOfContents{
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    height: 90%;
     border: 2px solid #9c9c9c ;
     border-radius: 35px;
     margin: auto;
@@ -245,19 +252,20 @@ body {background-color: #000000;}
     font-weight: 700;
     font-family: 宋体;
     line-height: 112px;
-    font-size: 48px;
+    font-size: 36px;
     text-align: center;
 }
 .previewimg{
-    width: 80%;
-    height: 200px;
+    width: 90%;
+    height: 175px;
     margin: auto;
     border-radius: 15px;
     overflow: hidden;
 }
 .previewwork{
-    width: 80%;
+    width: 90%;
     margin: auto;
+    padding-bottom: 15px;
 }
 #contentbackground .contentsA .ContentsOfContents p{
     line-height: 24px;
@@ -280,17 +288,18 @@ body {background-color: #000000;}
 }
 .morelink{
     height: var(--morelinksHeight);
-    width: 60%;
+    width: 100%;
     /*background: skyblue;*/
     margin: auto;
-    overflow: auto;
+    overflow: hidden;
     min-width: 500px;
+    position: relative;
     /*background: red;*/
 }
 .morelink p{
     line-height: var(--morelinksHeight);
     position: absolute;
-    font-size: 20px;
+    font-size: 16px;
 }
 .morelinksicon{
     height: 50px;
@@ -329,7 +338,7 @@ body {background-color: #000000;}
     display: none;
 }
 .avatarviewerimg{
-    width: 90vh;
+    width: 60vh;
     height: 0vh;
     background: #f6f6f6;
     z-index: 11;
@@ -349,8 +358,8 @@ body {background-color: #000000;}
     height: 20px;
     border-radius: 25%;
     /*border: 1px solid grey;*/
-    /*background: ;*/
-    color: white;
+    background: white;
+    color: black;
     line-height: 20px;
     font-size: 20px;
     text-align: center;
@@ -360,40 +369,45 @@ body {background-color: #000000;}
     right: 2.5%;
     transition: 0.2s;
 }
-.ESCavatarviewer:hover{
-    background: white;
-    color: black;
-}
 .disable-hover{
     pointer-events: none;
 }
 .blockcover{
-    height:calc(var(--coverheight) + 300px);
+    height:72.5%;
     overflow: hidden;
-    transition: 0.3s;
+    transition: 0.5s;
     background: black;
+    position: relative;
 }
 .blockcover img{
+    filter: brightness(80%);
     transition: 0.5s;
-    width: 100%;
-    margin-top: -10%;
+    /*height: 100%;*/
+    position: absolute;
+    left: 10%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+    animation:coverbright 5s infinite ;
 }
 .nonecover{
     height:0px;
     overflow: hidden;
-    transition: 0.3s;
+    transition: 0.5s;
     background: black;
+    position: relative;
 }
 .nonecover img{
     transition: 0.5s;
-    width: 100%;
-    margin-top: -10%;
+    position: absolute;
+    left: 10%;
+    top: 70%;
+    transform: translate(-50%, -50%);
 }
 
 
 @property --colorA {syntax: '<color>';inherits: false;initial-value: rgb(222, 222, 222);}
 @property --colorB {syntax: '<color>';inherits: false;initial-value: rgb(255, 255, 255);}
-@property --colorC {syntax: '<color>';inherits: false;initial-value: rgba(163, 191, 194, 0);}
+@property --colorC {syntax: '<color>';inherits: false;initial-value: rgba(163, 191, 194, 0.8);}
 @keyframes ColorChange{
     50% {--colorA: rgb(255, 255, 255);--colorB: rgb(233, 233, 233);}}
 @keyframes coverenter{
@@ -402,3 +416,9 @@ body {background-color: #000000;}
     66%{--colorC: rgba(54, 50, 47, 0.8);}
     100%{--colorC: rgba(226, 224, 209,0.8);}
 }
+@keyframes coverbright{
+    0%{filter: brightness(90%);}
+    50%{filter: brightness(50%);}
+    100%{filter: brightness(90%);}
+}
+
