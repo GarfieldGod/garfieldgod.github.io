@@ -12,16 +12,16 @@ body {background-color: #000000;}
     --morelinksHeight:200px;
     --coverentercolor:white;
 }
-/* .screen {
-    width: 600px;
-    height: 800px;
+.screen {
+/*     min-width: 600px;
+    min-height: 800px; */
     overflow: auto;
-} */
+}
 /*页眉------------------------------------------------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------------------------------------------------*/
 .entercover{
-    height:72.5%;
+    height:580px;
     cursor:pointer;
     overflow: hidden;
     transition: 0.5s;
@@ -371,7 +371,7 @@ body {background-color: #000000;}
     pointer-events: none;
 }
 .blockcover{
-    height:72.5%;
+    height:580px;
     overflow: hidden;
     transition: 0.5s;
     background: black;
