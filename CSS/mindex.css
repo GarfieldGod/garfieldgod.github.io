@@ -12,12 +12,11 @@ body {background-color: #000000;}
     --morelinksHeight:200px;
     --coverentercolor:white;
 }
-.screen {
+/* .screen {
     width: 600px;
     height: 800px;
     overflow: auto;
-    /*position: relative;*/
-}
+} */
 /*页眉------------------------------------------------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------------------------------------------------*/
@@ -68,7 +67,7 @@ body {background-color: #000000;}
     top: 150%;
     transform: translate(-50%, -50%);
 }
-/* .cover:hover{
+.cover:hover{
     height:calc(var(--coverheight) + 200px);
     cursor:pointer;
 } 
@@ -76,7 +75,6 @@ body {background-color: #000000;}
     top: 100%;
     filter: brightness(100%);
 }
-*/
 .MiniHeader{
     height: var(--MiniHeaderheight);
     background: black;
