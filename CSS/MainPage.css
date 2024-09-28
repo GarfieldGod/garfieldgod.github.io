@@ -1,0 +1,300 @@
+*{
+    margin: 0;
+    padding: 0; 
+}
+body {background-color: #000000;}
+:root{ 
+    --coverheight:430px;
+    --MiniHeaderheight:220px;
+    --AvatarSize:150px;
+    --ContentHeight:1000px;
+    --ContentAHeight:725px;
+    --morelinksHeight:300px;
+    --coverentercolor:white;
+}
+/*页眉------------------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------------------*/
+.MiniHeader{
+    height: var(--MiniHeaderheight);
+    background: black;
+    position: relative;
+    transition: 0.5s;
+    /*overflow: hidden;*/
+}
+.navigationBlock{
+    width: 70%;
+    min-width: 1200px;
+    position: absolute;
+    left:0px;
+    right: 0px;
+    top:0px;
+    bottom: 0px;
+    margin: auto;
+
+    /*background: #9c9c9c;*/
+}
+.navigationBlockA{
+    height: calc(var(--AvatarSize) + 4px);
+    width: 70%;
+    min-width: 1200px;
+    position: absolute;
+    left:0px;
+    right: 0px;
+    top:0px;
+    bottom: 0px;
+    margin: auto;
+    /*background: blue;*/
+}
+.navigationBlockB{
+    height: calc(var(--AvatarSize) + 4px);
+    width: 50%;
+    float: left;
+    margin-left: -20%;
+    /*background: skyblue;*/
+    min-width: 550px;
+    transition: 1s;
+}
+.avatar{
+    width: var(--AvatarSize) ;
+    height: var(--AvatarSize);
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-left: 100px;
+    overflow: hidden;
+    float: left;
+    transition: 0.25s;
+    cursor:pointer;
+    background: white;
+}
+.avatar:hover{
+    width:calc(var(--AvatarSize) + 50px);
+    height:calc(var(--AvatarSize) + 50px);
+    margin-top: -25px;
+}
+.BriefIntroduction{
+    width: 250px;
+    height: 119px;
+    padding-top: 25px;
+    padding-left: 35px;
+    overflow: hidden;
+    float: left;
+    white-space:nowrap;
+    /*background: red;*/
+}
+/*头像浏览器------------------------------------------------------------------------------------------------------------*/
+.avatarviewer{
+    width: 100%;
+    height: 0%;
+    background: black;
+    z-index: 10;
+    position: fixed;
+    border-radius: 15px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: hidden;
+    display: none;
+}
+.avatarviewerimg {
+    width: 90vh;
+    height: 0vh;
+    /*background: #f6f6f6;*/
+    z-index: 11;
+    position: fixed;
+    border-radius: 15px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.ESCavatarviewer{
+    z-index: 12;
+    width: 75px;
+    height: 20px;
+    border-radius: 25%;
+    /*border: 1px solid grey;*/
+    /*background: ;*/
+    color: white;
+    line-height: 20px;
+    font-size: 20px;
+    text-align: center;
+    overflow: hidden;
+    position: absolute;
+    bottom: 2.5%;
+    right: 2.5%;
+    transition: 0.2s;
+}
+.ESCavatarviewer:hover{
+    background: white;
+    color: black;
+}
+.disable-hover{
+    pointer-events: none;
+}
+/*封面------------------------------------------------------------------------------------------------------------*/
+.blockcover{
+    width: 100%;
+    height:calc(var(--coverheight) + 300px);
+    overflow: hidden;
+    transition: 0.3s;
+    background: black;
+    z-index: 9;
+}
+/* .blockcover img{
+    transition: 0.5s;
+    width: 150%;
+    margin-top: -10%;
+    margin-left: -50%;
+} */
+.blockcover img{
+    transition: 0.5s;
+    width: 100%;
+    margin-top: -10%;
+    margin-left: 0%;
+    transition: 0.5s;
+} 
+.nonecover{
+    height:0px;
+    overflow: hidden;
+    transition: 0.3s;
+    background: black;
+}
+/* .nonecover img{
+    transition: 0.5s;
+    width: 150%;
+    margin-top: -10%;
+    margin-left: -50%;
+} */
+.nonecover img{
+    transition: 0.5s;
+    width: 100%;
+    margin-top: -30%;
+    margin-left: 0%;
+    transition: 0.5s;
+}
+/*搜索框------------------------------------------------------------------------------------------------------------*/
+.searchout{
+    position: absolute;
+    top: 25%;
+    left: 70%;
+}
+.search {
+    overflow: hidden;
+    height: 62px;
+    width: 900px;
+    background: #1b272e;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin-left: -450px;
+    transition: 0.75s;
+}
+.sinput {
+    width: 760px;
+    height: 50px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    float: left;
+    margin-top: 5px;
+    margin-left: 5px;
+    padding-left: 17px;
+    font-size: 24px;
+}
+.sbutton {
+    width: 104px;
+    height: 50px;
+    background: #a9fff9;
+    border: 1px solid #e0e0e0;
+    color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.searchin {
+    float:right;
+    overflow: hidden;
+    height: 62px;
+    width: 0px;
+    background: #1b272e;
+    border-radius: 5px;
+    transition: 0.75s;
+}
+/*侧边栏------------------------------------------------------------------------------------------------------------*/
+.RightMenu {
+    overflow: hidden;
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50px;
+    /* border: 2px solid rgb(148, 148, 148); */
+    top: 15%;
+    right: 0%;
+    width: 60px;
+    height: 500px;
+    transition: 1s;
+}
+.ClosedRightMenu {
+    overflow: hidden;
+    position: absolute;
+    border-radius: 50px;
+    top: 15%;
+    right: 0%;
+    width: 0px;
+    height: 500px;
+    transition: 1s;
+}
+.Icons{
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid rgb(170, 204, 255);
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.Icons img{
+    width: 100%;
+}
+/*轮换------------------------------------------------------------------------------------------------------------*/
+.avatarviewerimg img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.avatarviewerimg img.active {
+    opacity: 1;
+}
+
+.avatarviewerimg .prev {
+    left: 10px;
+}
+
+.avatarviewerimg .next {
+    right: 10px;
+}
+.avatarviewerimg .prev, .avatarviewerimg .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+}
+.prev:hover, .next:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+}

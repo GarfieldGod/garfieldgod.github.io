@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GarfieldGod-神加菲尔德</title>
+    <script type="text/javascript">
+        try{
+            if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) 
+            {
+                window.location.href="mindex.html";   
+            }
+            else{
+                /*window.location.href="cindex.html";*/
+            }
+            }catch(e){}
+    </script>
+    <link type="text/css" rel="stylesheet" href="CSS/MainPage.css">
+    <script type="text/javascript" src="JavaScript/MainPage.js"></script>
+    <link rel="icon" href="Resource/ico.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="Resource/ico.ico" type="image/x-icon">
+    <script src="jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <!-- 页眉------------------------------------------------------------------------------------------------ -->
+    <!-- 头像浏览器------------------------------------------------------------------------------------------------ -->
+    <div class="avatarviewer" id="avatarviewer">
+        <p style="color: white;text-align: center;font-family:Times New Roman;;font-size: 44px;font-weight: 700;margin-top: 20px;">❮---------------The Cutest Person In The World---------------❯</p>
+        <div class="ESCavatarviewer" style="cursor:pointer;" onclick="ESCviewavatar()">
+            返回<!-- <img style="width: 100%;height: 100%;" src="Resource/ESC.png" alt=""> -->
+        </div>
+        <div class="avatarviewerimg" id="avatarviewerimg">
+            <img class="" src="Resource/AvatarViewer/1.jpg">
+            <img class="" src="Resource/AvatarViewer/2.jpg">
+            <img class="" src="Resource/AvatarViewer/3.jpg">
+            <img class="" src="Resource/AvatarViewer/4.jpg">
+            <img class="" src="Resource/AvatarViewer/5.jpg">
+            <a class="prev" >&#10094;</a>
+            <a class="next" >&#10095;</a>
+        </div>
+    </div>
+    <!-- 封面------------------------------------------------------------------------------------------------ -->
+    <div class="blockcover" id="cover">
+        <img src="Resource/HelloWorld.jpg" alt="">
+    </div>
+    <!-- 页眉------------------------------------------------------------------------------------------------ -->
+    <div class="MiniHeader" id="MiniHeader">
+        <div class="navigationBlock">
+            <div class="navigationBlockA" id="navigationBlockA">
+                <div class="navigationBlockB" id="navigationBlockB">
+                    <div class="avatar" id="avatar" onclick="viewavatar()">
+                        <img style="width: 100%; height: 100%;margin:auto;" src="Resource/psc.jpg" alt="">
+                    </div>
+                    <div class="BriefIntroduction">
+                        <h1 style="color: white;font-size: 44px;font-family:Times New Roman;white-space:nowrap;">GarfieldGod</h1>
+                        <div style="color: white;white-space:nowrap;">
+                            I'm God. <br>
+                            <a href="https://garfieldgod.cn" style="color: white;font-style:italic;white-space:nowrap;">garfieldgod.cn</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="searchout"><div class="search" id="search"><input class="sinput" autocomplete="off" type="text" placeholder="" id="searchTxt"><button type="submit" class="sbutton" onclick="searchs()">◯</button></div></div>
+            </div>
+        </div>
+    </div>
+    <!-- 侧边栏------------------------------------------------------------------------------------------------ -->
+    <div class="RightMenu" id="RightMenu">
+        <div class="Icons"><a href="https://www.bilibili.com"><img src="Resource/bilibili.png" alt=""></a></div>
+        <div class="Icons"><a href="https://fanyi.baidu.com/"><img src="Resource/百度翻译.jpeg" alt=""></a></div>
+        <div class="Icons"><a href="https://www.baidu.com/"><img src="Resource/百度.jpg" alt=""></a></div>
+        <div class="Icons"><a href="https://www.developers.pub"><img src="Resource/开发者客栈.png" alt=""></a></div>
+        <div class="Icons"><a href="https://www.nowcoder.com/"><img src="Resource/牛客网.png" alt=""></a></div>
+        <div class="Icons"><a href="https://leetcode.cn/"><img src="Resource/力扣.png" alt=""></a></div>
+        <div class="Icons"><a href="https://xyzp.haitou.cc/trade-113"><img src="Resource/海投网.png" alt=""></a></div>
+        <div class="Icons"><a href=""><img src="Resource/社区.png" alt=""></a></div>
+        <!--<div class="Icons"><a href="https://garfieldgod.cn/index.php/forum/"><img src="Resource/社区.png" alt=""></a></div> --!>
+        </div>
+        <script>
+                    $(document).ready(function () {
+        $("input").keydown(function (event) {
+            if (event.keyCode == 13) {
+                searchs();
+            }
+        });
+    });
+        </script>
+
+        <!-- ------------------------------------------------------------------------------------------------ -->
+        <script>
+            var slides = document.querySelectorAll('.avatarviewerimg img');
+            var randomStartIndex = Math.floor(Math.random() * slides.length);
+            slides[randomStartIndex].classList.add('active');
+            var currentSlide = randomStartIndex;
+            function photochangeon() {
+                slideshowInterval = setInterval(nextSlide, 5000);
+            }
+            function nextSlide() {
+                slides[currentSlide].style.opacity = 0;
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].style.opacity = 1;
+            }
+            function photochangeoff() {
+                clearInterval(slideshowInterval);
+            }
+            var prevButton = document.querySelector('.avatarviewerimg .prev');
+            var nextButton = document.querySelector('.avatarviewerimg .next');
+            function pprevSlide() {
+                slides[currentSlide].style.opacity = 0;
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                slides[currentSlide].style.opacity = 1;
+                photochangeoff();
+                photochangeon();
+            }
+
+            function nnextSlide() {
+                slides[currentSlide].style.opacity = 0;
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].style.opacity = 1;
+                photochangeoff();
+                photochangeon();
+            }
+
+            prevButton.addEventListener('click', pprevSlide);
+            nextButton.addEventListener('click', nnextSlide);
+        </script>
+</body>
+</html>
