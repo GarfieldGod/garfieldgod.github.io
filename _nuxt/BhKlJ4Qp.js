@@ -1,0 +1,1 @@
+function e(r){if(!r)return"";const t=new Date(r);return Number.isNaN(t.getTime())?"":`${t.getFullYear()}年${t.getMonth()+1}月${t.getDate()}日`}function n(r){return r?r.replace(/<a\b[^>]*>([\s\S]*?)<\/a>/gi,"$1"):""}function a(r){const t=(r??"").trim();return t?t.startsWith("/")||t.startsWith("data:")||/^https?:\/\//i.test(t)?t:`/media/${t}`:""}export{n as a,a as c,e as f};
