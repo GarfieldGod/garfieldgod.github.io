@@ -1,1 +1,0 @@
-const o=new Set(["png","jpg","jpeg","webp","avif"]);function a(n,r=720){const t=(n??"").trim();if(!t.startsWith("/uploads/"))return t;const e=t.lastIndexOf(".");if(e<=t.lastIndexOf("/"))return t;const s=t.slice(e+1).toLowerCase();return o.has(s)?`${t}.w${r}.webp`:t}export{a as t};
